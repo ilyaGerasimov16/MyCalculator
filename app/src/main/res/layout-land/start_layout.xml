@@ -20,4 +20,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/helloWorldThemeRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/helloWorldThemeText"
+            android:textSize="@dimen/radioGroupTextSize"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/MyThemeRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/myThemeText"
+            android:textSize="@dimen/radioGroupTextSize"/>
+
+    </RadioGroup>
+
 </LinearLayout>

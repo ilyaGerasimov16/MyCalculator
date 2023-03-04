@@ -3,7 +3,7 @@ package com.example.helloworld;
 import java.io.Serializable;
 
 public class IntermediateValue implements Serializable {
-    String intermediateValue = "";
+    private String intermediateValue = "";
 
     public String getIntermediateValue() {
         return intermediateValue;

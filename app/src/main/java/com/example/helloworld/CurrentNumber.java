@@ -15,7 +15,7 @@ public class CurrentNumber implements Serializable {
     }
 
     void resetToZero(){
-        number = "";
+        setNumber("");
     }
 
     public void setNumber(String number) {

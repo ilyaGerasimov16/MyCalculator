@@ -2,7 +2,6 @@
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,21 +31,17 @@ import android.widget.TextView;
      Button buttonDiv;
      Button buttonPoint;
      Button buttonResult;
-     CurrentNumber currentNumber;
-     IntermediateValue intermediateValue;
+     CurrentNumber currentNumber = new CurrentNumber();
+     IntermediateValue intermediateValue = new IntermediateValue();
      Float result;
-     CurrentSign currentSign;
+     CurrentSign currentSign = new CurrentSign();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_layout);
-        resultView = findViewById(R.id.text_result);
-        currentNumber = new CurrentNumber();
-        intermediateValue = new IntermediateValue();
-        currentSign = new CurrentSign();
 
-        initButtons();
+        initView();
         buttonClickListeners();
     }
 
@@ -109,10 +104,16 @@ import android.widget.TextView;
              currentSign.setSign('+');
          });
          buttonSub.setOnClickListener(v -> {
-             intermediateValue.setIntermediateValue(currentNumber.getNumber());
-             currentNumber.resetToZero();
+             if (currentNumber.getNumber().equals("")){
+                 currentNumber.addDigit(buttonSub.getText().toString());
+             } else {
+                 if (currentSign.getSign() == null) {
+                     intermediateValue.setIntermediateValue(currentNumber.getNumber());
+                     currentSign.setSign('-');
+                 }
+                 currentNumber.resetToZero();
+             }
              setNumberToTextView();
-             currentSign.setSign('-');
          });
          buttonMul.setOnClickListener(v -> {
              intermediateValue.setIntermediateValue(currentNumber.getNumber());
@@ -137,33 +138,38 @@ import android.widget.TextView;
          buttonResult.setOnClickListener(v -> {
 
              if (intermediateValue.getIntermediateValue().length()>0 && currentNumber.getNumber().length()>0){
-                 switch (currentSign.getSign()){
-                     case ('+'):
-                         result = Float.parseFloat(currentNumber.getNumber()) + Float.parseFloat(intermediateValue.getIntermediateValue());
-                         currentNumber.setNumber(result.toString());
-                         setNumberToTextView();
-                         break;
-                     case ('-'):
-                         result = Float.parseFloat(intermediateValue.getIntermediateValue()) - Float.parseFloat(currentNumber.getNumber());
-                         currentNumber.setNumber(result.toString());
-                         setNumberToTextView();
-                         break;
-                     case ('*'):
-                         result = Float.parseFloat(currentNumber.getNumber()) * Float.parseFloat(intermediateValue.getIntermediateValue());
-                         currentNumber.setNumber(result.toString());
-                         setNumberToTextView();
-                         break;
-                     case ('/'):
-                         try {
-                             result = Float.parseFloat(intermediateValue.getIntermediateValue()) / Float.parseFloat(currentNumber.getNumber());
-                             currentNumber.setNumber(result.toString());
-                             setNumberToTextView();
-                         } catch (Exception ex) {
-                             resultView.setText("Ошибка");
-                         }
-                         break;
+                if(buttonPoint.getText().toString().equals(currentNumber.getNumber())) {
+                    currentNumber.setNumber("0.0");
+                }
+                 if (buttonPoint.getText().toString().equals(intermediateValue.getIntermediateValue())) {
+                     intermediateValue.setIntermediateValue("0.0");
                  }
-             }
+                 switch (currentSign.getSign()){
+                 case ('+'):
+                     result = Float.parseFloat(currentNumber.getNumber()) + Float.parseFloat(intermediateValue.getIntermediateValue());
+                     currentNumber.setNumber(result.toString());
+                     setNumberToTextView();
+                     break;
+                 case ('-'):
+                     result = Float.parseFloat(intermediateValue.getIntermediateValue()) - Float.parseFloat(currentNumber.getNumber());
+                     currentNumber.setNumber(result.toString());
+                     setNumberToTextView();
+                     break;
+                 case ('*'):
+                     result = Float.parseFloat(currentNumber.getNumber()) * Float.parseFloat(intermediateValue.getIntermediateValue());
+                     currentNumber.setNumber(result.toString());
+                     setNumberToTextView();
+                     break;
+                 case ('/'):
+                     try {
+                         result = Float.parseFloat(intermediateValue.getIntermediateValue()) / Float.parseFloat(currentNumber.getNumber());
+                         currentNumber.setNumber(result.toString());
+                         setNumberToTextView();
+                     } catch (Exception ex) {
+                         resultView.setText("Ошибка");
+                     }
+                     break;
+             }}
          });
      }
 
@@ -171,7 +177,8 @@ import android.widget.TextView;
          resultView.setText(currentNumber.getNumber());
      }
 
-     private void initButtons() {
+     private void initView() {
+        resultView = findViewById(R.id.text_result);
         button0 = findViewById(R.id.btn_0);
         button1 = findViewById(R.id.btn_1);
         button2 = findViewById(R.id.btn_2);
@@ -204,7 +211,7 @@ import android.widget.TextView;
          super.onRestoreInstanceState(savedInstanceState);
          currentNumber = (CurrentNumber) savedInstanceState.getSerializable(KEY_CURRENT);
          intermediateValue = (IntermediateValue) savedInstanceState.getSerializable(KEY_INTERMEDIATE);
-         currentSign = (CurrentSign) savedInstanceState.getParcelable(KEY_SIGN);
+         currentSign = savedInstanceState.getParcelable(KEY_SIGN);
          setNumberToTextView();
      }
  }

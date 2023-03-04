@@ -3,4 +3,5 @@
     <dimen name="button_size">30sp</dimen>
     <dimen name="margin_field">30dp</dimen>
     <dimen name="margin_button">3dp</dimen>
+    <dimen name="radioGroupTextSize">30sp</dimen>
 </resources>
