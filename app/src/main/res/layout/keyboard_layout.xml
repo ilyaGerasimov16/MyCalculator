@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <TableRow
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_1"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_1_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            app:rippleColor="#03CAD6"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_2_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_3_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_add_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_4_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_5_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_6_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_sub_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_7_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_8_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_9_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_mul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_mul_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_0_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_point_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_reset_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_div_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+    </TableRow>
+
+    <TableRow
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_span="4"
+            android:id="@+id/btn_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_button"
+            android:textSize="@dimen/button_size"
+            android:text="@string/button_result_text"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+    </TableRow>
+
+</TableLayout>
